@@ -4,7 +4,8 @@ public:
        int counter=0;
        string ans="";
        for(int i=0 ; i<s.size() ; i++){
-        if(s[i]=='('){
+        if(s[i]=='('){ //pehle yeh chck karna hai ki kahi counter 0 toh nhi ...agar ocunter 0 hai toh woh primitive string ka opening bracket hi hoga obviously 
+        //usse ans string mei add hi nhi karenge....bas counter++ kardenge 
             if(counter==0){
                 counter++;
             }
@@ -13,7 +14,7 @@ public:
                 counter++;
             }
         }
-        else{
+        else{//same chack for closing bracket ..par pehle ismei counter-- karna padega agar woh 0 ke equal ho jaaye mtlb woh closing bracket hai primitive string ka 
             counter--;
             if(counter!=0){
                 ans=ans+s[i];
