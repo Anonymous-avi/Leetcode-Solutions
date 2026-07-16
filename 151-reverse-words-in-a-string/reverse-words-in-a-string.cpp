@@ -9,16 +9,13 @@ public:
                 vec.push_back(word);
                 word="";
             }
-            
         }
         else{
-                word=word+s[i];
-            }
-        if(i==s.size()-1){
-            if(!word.empty()){
-                vec.push_back(word);
-            }
+            word=word+s[i];
         }
+       }
+       if(!word.empty()){
+        vec.push_back(word);
        }
        reverse(vec.begin() , vec.end());
        string ans="";
@@ -29,6 +26,8 @@ public:
         }
        }
        return ans;
+
+
     }
     
 };
