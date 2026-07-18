@@ -7,7 +7,7 @@ public:
         if(s[i]=='('){
             count++;
             
-        }
+        }//yaha normal else nhi lagaayenge coz warna har character ka count-- ho jaayega par hame sirf ')' character ka count -- karna hai
         else if(s[i]==')'){
             count--;
         }
