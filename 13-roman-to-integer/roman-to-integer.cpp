@@ -1,6 +1,7 @@
 class Solution {
 public:
     int romanToInt(string &s) {
+      //optimal approach only 
        unordered_map<char,int>mpp;
        mpp['I']=1;
        mpp['V']=5;
@@ -22,7 +23,7 @@ else
     ans += mpp[s[i]];
 }
        }
-
+       //iske bina last waali value kabhi process hi nhi hogi 
        ans=ans+mpp[s.back()];
        return ans;
 
