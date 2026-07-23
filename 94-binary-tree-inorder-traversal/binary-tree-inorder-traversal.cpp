@@ -11,7 +11,7 @@
  */
 class Solution {
 public: 
-    void inorder(TreeNode*root,vector<int>&ans){
+    void inorder(TreeNode*root,vector<int>&ans){//hamesha by reference hi pass karana hai yaad rakhna 
         if(root==nullptr){
             return;
         }
