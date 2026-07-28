@@ -1,29 +1,28 @@
 class Solution {
 public:
     bool isValid(string s) {
-        stack<char> st;
-
-        for(char ch : s) {
-            // If opening bracket, push
-            if(ch == '(' || ch == '{' || ch == '[') {
-                st.push(ch);
+        stack<char>st;
+        for(int i=0 ; i<s.size() ; i++){
+            if(s[i]=='(' || s[i]=='{' ||s[i]=='['){
+                st.push(s[i]);
             }
-            // If closing bracket
-            else {
-                if(st.empty()) return false;
-
-                char top = st.top();
-                st.pop();
-
-                if((ch == ')' && top != '(') ||
-                   (ch == '}' && top != '{') ||
-                   (ch == ']' && top != '[')) {
+            else{
+                if(st.empty()){
+                    return false;
+                }
+                if(s[i]==')' && st.top()=='(' || s[i]=='}' && st.top()=='{' || s[i]==']' && st.top()=='['){
+                    st.pop();
+                }
+                else{
                     return false;
                 }
             }
         }
+        if(st.empty()){
+            return true;
+        }
 
-        // Stack must be empty at end
-        return st.empty();
+        return false;
+        
     }
 };
