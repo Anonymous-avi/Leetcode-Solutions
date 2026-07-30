@@ -7,6 +7,7 @@ public:
         for(int j=0 ; j<nums2.size() ; j++){
             if(nums1[i]==nums2[j]){
                 temp=j;
+                break;
             }
         }
 
