@@ -12,7 +12,7 @@ public:
         minValue=value;
        }
        else if(value<minValue){
-        st.push(2LL*value-minValue);
+        st.push(2LL*value-minValue);//iss result ko long long mei convert karna pasega other wise stack overflow ho jaayega 
         minValue=value;
        }
        else{
