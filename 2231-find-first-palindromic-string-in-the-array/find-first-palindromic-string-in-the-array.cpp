@@ -16,8 +16,8 @@ public:
     string firstPalindrome(vector<string>& words) {
         for(int i=0 ; i<words.size() ; i++){
             if(isPallindrome(words[i])){
-                return words[i];
-                break;
+                return words[i];//return ke baad break lagana is useless
+                
             }
         }
         return "";
