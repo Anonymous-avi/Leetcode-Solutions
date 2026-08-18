@@ -1,27 +1,30 @@
 class Solution {
 public:
     vector<int> topKFrequent(vector<int>& nums, int k) {
-        unordered_map<int, int> freq;
+       unordered_map<int,int>freq;
 
-        // Count frequency of each element
-        for (int num : nums) {
-            freq[num]++;
-        }
+       for(auto it : nums){
+        freq[it]++;         //value,frequency stored 
+       }
 
-        // Max Heap: {frequency, element}
-        priority_queue<pair<int, int>> pq;
+       priority_queue<pair<int,int>>pq;
 
-        for (auto it : freq) {
-            pq.push({it.second, it.first});
-        }
+       for(auto it : freq){   //pair mei hamesha braces ka sath store karte hai 
+        pq.push({it.second,it.first});   //pehle frequency store karaayenge fir number taaki max heap frequency ke hissab se bane 
+       }
 
-        vector<int> ans;
+       vector<int>result ;
 
-        while (k--) {
-            ans.push_back(pq.top().second);
-            pq.pop();
-        }
+       while(k--){
+        result.push_back(pq.top().second);
+        pq.pop();
+       }
 
-        return ans;
+       return result;
+
+
+       
+
+
     }
 };
