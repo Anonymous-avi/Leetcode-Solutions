@@ -2,6 +2,7 @@ class Solution {
 public:
     string reorganizeString(string s) {
         int n=s.length();
+        //pehle ek frequency vector mei saare elements ki frequency store karnege 
         vector<int>freq(26,0);
 
         for(auto &ch : s){
@@ -13,7 +14,7 @@ public:
                 return "";
             }
         }
-        priority_queue<pair<int,char>>pq;
+        priority_queue<pair<int,char>>pq; //for storing freq as well that character whose freq we are storing 
         for(int i = 0; i < 26; i++){
     if(freq[i] > 0){
         pq.push({freq[i], 'a' + i});
