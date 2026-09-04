@@ -32,38 +32,43 @@ public:
 
 
        //OPTIMAL APPROACH 
-       ListNode* slow=head;
-       ListNode* fast=head;
-       while(fast->next!=nullptr && fast->next->next!=nullptr){
+      ListNode* slow = head;
+      ListNode* fast = head;
+      if(head==nullptr || head->next==nullptr){
+        return true;
+      }
+      while(fast->next!=nullptr && fast->next->next!=nullptr){
         slow=slow->next;
         fast=fast->next->next;
+      }
+      ListNode* first = head;
+      ListNode* second = slow->next;
 
-       }
-       
-       ListNode*first=head;
-       ListNode*second=reverseMiddle(slow->next);
-       while(second!=nullptr){
+      second = reverseMiddle(second);
+
+      while(first!=nullptr && second!=nullptr){
         if(first->val!=second->val){
             return false;
         }
         first=first->next;
         second=second->next;
-       }
-       return true;
+      }
+      return true;
+      
 
         
     }
 
 private:
 ListNode* reverseMiddle(ListNode*head){
-    ListNode*prev=nullptr;
-    ListNode*current=head;
-    while(current!=nullptr){
-        ListNode*next=current->next;
-        current->next=prev;
-        prev=current;
-        current=next;
-    }
-    return prev;
+   ListNode* prev = nullptr;
+   ListNode* curr = head;
+   while(curr!=nullptr){
+    ListNode* next = curr->next;
+    curr->next=prev;
+    prev=curr;
+    curr=next;
+   }
+   return prev;
 }
 };
