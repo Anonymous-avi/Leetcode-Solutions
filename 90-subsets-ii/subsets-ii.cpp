@@ -1,7 +1,7 @@
 class Solution {
     public:
     void solve(vector<int>&nums,int i , vector<int>&temp , vector<vector<int>>&result){
-        sort(nums.begin() , nums.end());
+        
         //base case
         if(i>=nums.size()){
             result.push_back(temp);
@@ -18,6 +18,7 @@ class Solution {
     }
 public:
     vector<vector<int>> subsetsWithDup(vector<int>& nums) {
+        sort(nums.begin() , nums.end());//recurive call me baar baar sort hoga toh time complexity increase hogi ...isiliye it's better to just sort one time only in the main function 
        vector<vector<int>>result;
        vector<vector<int>>ans;
        vector<int>temp;
