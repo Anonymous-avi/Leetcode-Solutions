@@ -2,7 +2,6 @@ class Solution {
     public:
     void solve(vector<int>&nums,int i , vector<int>&temp , vector<vector<int>>&result){
         sort(nums.begin() , nums.end());
-        
         //base case
         if(i>=nums.size()){
             result.push_back(temp);
